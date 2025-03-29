@@ -1,0 +1,3 @@
+/Users/sriramprasath/projects/synthium/CMakeFiles/synthium.dir
+/Users/sriramprasath/projects/synthium/CMakeFiles/edit_cache.dir
+/Users/sriramprasath/projects/synthium/CMakeFiles/rebuild_cache.dir
