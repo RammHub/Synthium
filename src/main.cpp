@@ -46,25 +46,61 @@
 /*    return 0;*/
 /*}*/
 
-int main() {
-    std::string code = R"(
-        module adder(input a, b, output sum, diff);
-        assign sum = a + b;
-        assign diff = a - b;
-        endmodule
-    )";
+/*int main() {*/
+/*    std::string code = R"(*/
+/*        module Adder(input a, input b, output sum);*/
+/*        assign sum = a + b;*/
+/*        assign diff = a - b;*/
+/*        endmodule*/
+/*    )";*/
+/**/
+/*    auto tokens = lex(code);*/
+/*    Parser parser(tokens);*/
+/*    //ASTNode ast = parser.parseModule();*/
+/*    ASTNode ast = parser.parseModule();*/
+/*    auto* module = dynamic_cast<ASTModule*>(ast.get());*/
+/*    if (module) {*/
+/*        std::cout << "Parsed module: " << module.name << std::endl;*/
+/*        for (const auto& port : module.ports) {*/
+/*            std::cout << "Port: " << port.second << " Type: " << tokenTypeToString(port.first) << std::endl;*/
+/*        }*/
+/*        for (const auto& assign : module.assignments) {*/
+/*            auto* assignNode = dynamic_cast<ASTAssign*>(assign.get());*/
+/*            if (assignNode) {*/
+/*                std::cout << "Assignment: " << assignNode.lhs << " = " << assignNode.rhs << std::endl;*/
+/*            }*/
+/*        }*/
+/*    }*/
+/**/
+/*    Simulator sim;*/
+/*    sim.executeAST(ast);*/
+/**/
+/*    // Set inputs*/
+/*    sim.scheduleEvent(0, "a", 5);*/
+/*    sim.scheduleEvent(0, "b", 3);*/
+/**/
+/*    sim.run();*/
+/*    return 0;*/
+/*}*/
 
+int main() {
+    std::string code = R"(module Adder (input a, input b, output sum); sum = a + b; end)";
     auto tokens = lex(code);
     Parser parser(tokens);
-    ASTNode ast = parser.parseModule();
 
-    Simulator sim;
-    sim.executeAST(ast);
+    // ✅ Directly parse into an ASTModule
+    ASTModule module = parser.parseModule();
 
-    // Set inputs
-    sim.scheduleEvent(0, "a", 5);
-    sim.scheduleEvent(0, "b", 3);
+    // ✅ Print parsed module details
+    std::cout << "Parsed module: " << module.name << std::endl;
 
-    sim.run();
+    for (const auto& port : module.ports) {
+        std::cout << "Port: " << port.second << " Type: " << tokenTypeToString(port.first) << std::endl;
+    }
+
+    for (const auto& assign : module.assignments) {
+        std::cout << "Assignment: " << assign.lhs << " = " << assign.rhs << std::endl;
+    }
+
     return 0;
 }

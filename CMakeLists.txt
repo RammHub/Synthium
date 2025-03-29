@@ -9,6 +9,7 @@ set(SOURCES
     src/lexer.cpp
     src/parser.cpp
     src/ast.cpp
+    src/token.cpp
     src/simulator.cpp
     src/main.cpp
 )

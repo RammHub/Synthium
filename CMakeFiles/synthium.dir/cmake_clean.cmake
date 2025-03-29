@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/synthium.dir/src/parser.cpp.o.d"
   "CMakeFiles/synthium.dir/src/simulator.cpp.o"
   "CMakeFiles/synthium.dir/src/simulator.cpp.o.d"
+  "CMakeFiles/synthium.dir/src/token.cpp.o"
+  "CMakeFiles/synthium.dir/src/token.cpp.o.d"
   "synthium"
   "synthium.pdb"
 )

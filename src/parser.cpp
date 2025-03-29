@@ -19,29 +19,46 @@ Parser::Parser(const std::vector<Token>& tokens) : tokens(tokens), currentIndex(
 // Consume the next token and move forward
 Token Parser::consume(TokenType expectedType) {
     if (currentToken().type != expectedType) {
-        throw std::runtime_error("Unexpected token: expected " + std::to_string(static_cast<int>(expectedType)));
+        //throw std::runtime_error("Unexpected token: expected " + std::to_string(static_cast<int>(expectedType)));
+       throw std::runtime_error("Unexpected token: expected " + tokenTypeToString(expectedType)+ " But got " + tokenTypeToString(currentToken().type) + ": " + currentToken().value );
     }
     return tokens[currentIndex++];  // ✅ Advance to next token
 }
 
 // Parse a module definition
 ASTNode Parser::parseModule() {
-    expect(TokenType::Module);
-    std::string moduleName = consume(TokenType::Identifier).value;
+    expect(TokenType::Module);  
+    std::string moduleName = consume(TokenType::Identifier).value;  
+    expect(TokenType::LParen);  
 
-    ASTNode moduleNode("Module", moduleName);
+    auto moduleNode = ASTModule(moduleName);
 
-    while (currentToken().type != TokenType::EndModule) {
+    // ✅ Parse input/output ports
+    while (currentToken().type != TokenType::RParen) {
         if (currentToken().type == TokenType::Input || currentToken().type == TokenType::Output) {
-            moduleNode.children.push_back(parsePort());
-        } else if (currentToken().type == TokenType::Assign) {
-            moduleNode.children.push_back(parseAssign());
+            Token portType = consume(currentToken().type);
+            Token portName = consume(TokenType::Identifier);
+            moduleNode.ports.emplace_back(portType.type, portName.value);
+
+            if (currentToken().type == TokenType::Comma) {
+                consume(TokenType::Comma);
+            }
         } else {
-            throw std::runtime_error("Unexpected token in module");
+            throw std::runtime_error("Unexpected token in port list: " + currentToken().value);
         }
     }
+    expect(TokenType::RParen);
 
-    expect(TokenType::EndModule);
+    // ✅ Parse assignments inside module
+    while (currentToken().type == TokenType::Identifier) {
+        Token lhs = consume(TokenType::Identifier);
+        expect(TokenType::Equal);
+        Token rhs = consume(TokenType::Identifier);  // or TokenType::Number
+        expect(TokenType::Semicolon);
+
+        moduleNode.assignments.push_back(ASTAssign(lhs.value, rhs.value));
+    }
+
     return moduleNode;
 }
 

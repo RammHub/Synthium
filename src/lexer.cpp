@@ -34,7 +34,10 @@ std::vector<Token> lex(const std::string& code) {
         else if (value == "-") tokens.push_back({TokenType::Minus, value});
         else if (value == ",") tokens.push_back({TokenType::Comma, value});
         else if (value == ";") tokens.push_back({TokenType::Semicolon, value});  // ✅ Handle statements properly
+        else if (value == "(") tokens.push_back({TokenType::LParen, value});  // ✅ Handle statements properly
+        else if (value == ")") tokens.push_back({TokenType::RParen, value});  // ✅ Handle statements properly
         else tokens.push_back({TokenType::Identifier, value});
+
     }
 
     return tokens;

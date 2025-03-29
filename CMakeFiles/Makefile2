@@ -85,12 +85,12 @@ clean: CMakeFiles/synthium.dir/clean
 CMakeFiles/synthium.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/synthium.dir/build.make CMakeFiles/synthium.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/synthium.dir/build.make CMakeFiles/synthium.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target synthium"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target synthium"
 .PHONY : CMakeFiles/synthium.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/synthium.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/synthium/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/synthium/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/synthium.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/synthium/CMakeFiles 0
 .PHONY : CMakeFiles/synthium.dir/rule
@@ -102,7 +102,7 @@ synthium: CMakeFiles/synthium.dir/rule
 # codegen rule for target.
 CMakeFiles/synthium.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/synthium.dir/build.make CMakeFiles/synthium.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target synthium"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target synthium"
 .PHONY : CMakeFiles/synthium.dir/codegen
 
 # clean rule for target.
