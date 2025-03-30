@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/sriramprasath/projects/synthium
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sriramprasath/projects/synthium
+CMAKE_BINARY_DIR = /Users/sriramprasath/projects/Synthium
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/synthium/CMakeFiles /Users/sriramprasath/projects/synthium//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/Synthium/CMakeFiles /Users/sriramprasath/projects/Synthium//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/synthium/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sriramprasath/projects/Synthium/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

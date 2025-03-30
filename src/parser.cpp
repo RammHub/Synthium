@@ -5,16 +5,8 @@
 #include <iostream>
 #include <stdexcept>
 
-// ✅ Constructor matches declaration
+// Constructor matches declaration
 Parser::Parser(const std::vector<Token>& tokens) : tokens(tokens), currentIndex(0) {}
-
-// Constructor
-//Parser::Parser(std::vector<Token> tokens) : tokens(std::move(tokens)) {}
-
-/*// Peek at the next token without consuming it*/
-/*Token Parser::peek() {*/
-/*    return (index < tokens.size()) ? tokens[index] : Token{TokenType::Unknown, ""};*/
-/*}*/
 
 // Consume the next token and move forward
 Token Parser::consume(TokenType expectedType) {
@@ -22,11 +14,25 @@ Token Parser::consume(TokenType expectedType) {
         //throw std::runtime_error("Unexpected token: expected " + std::to_string(static_cast<int>(expectedType)));
        throw std::runtime_error("Unexpected token: expected " + tokenTypeToString(expectedType)+ " But got " + tokenTypeToString(currentToken().type) + ": " + currentToken().value );
     }
-    return tokens[currentIndex++];  // ✅ Advance to next token
+    return tokens[currentIndex++];  // Advance to the next token
+}
+
+ASTExpression Parser::parseExpression() {
+    std::vector<Token> tokens;
+
+    while (currentToken().type == TokenType::Identifier || 
+           currentToken().type == TokenType::Number || 
+           currentToken().type == TokenType::Plus || 
+           currentToken().type == TokenType::Minus) 
+    {
+        tokens.push_back(consume(currentToken().type));
+    }
+
+    return ASTExpression(tokens);
 }
 
 // Parse a module definition
-ASTNode Parser::parseModule() {
+ASTModule Parser::parseModule() {
     expect(TokenType::Module);  
     std::string moduleName = consume(TokenType::Identifier).value;  
     expect(TokenType::LParen);  
@@ -48,16 +54,45 @@ ASTNode Parser::parseModule() {
         }
     }
     expect(TokenType::RParen);
+    expect(TokenType::Semicolon);
 
-    // ✅ Parse assignments inside module
+
+    // ✅ Debugging: Print next token after parsing ports
+    std::cout << "Next token after ports: " << tokenTypeToString(currentToken().type) << std::endl;
+
+    // Parse assignments
     while (currentToken().type == TokenType::Identifier) {
         Token lhs = consume(TokenType::Identifier);
         expect(TokenType::Equal);
-        Token rhs = consume(TokenType::Identifier);  // or TokenType::Number
+
+        ASTExpression rhsExpr = parseExpression();  // ✅ Parse into ASTExpression
         expect(TokenType::Semicolon);
 
-        moduleNode.assignments.push_back(ASTAssign(lhs.value, rhs.value));
+        std::cout << "Parsed assignment: " << lhs.value << " = ";
+        rhsExpr.print();  // ✅ Debug print
+
+        moduleNode.assignments.emplace_back(lhs.value, rhsExpr);  // ✅ Use correct constructor
     }
+
+    // // ✅ Parse assignments inside module
+    // while (currentToken().type == TokenType::Identifier) {
+    //     Token lhs = consume(TokenType::Identifier);
+    //     expect(TokenType::Equal);
+    //     Token rhs = consume(TokenType::Identifier);  // or TokenType::Number
+    //     expect(TokenType::Semicolon);
+    //
+    //     moduleNode.assignments.push_back(ASTAssign(lhs.value, rhs.value));
+    // }
+
+    // // ✅ Parse assignments inside module
+    // while (currentToken().type == TokenType::Identifier) {
+    //     Token lhs = consume(TokenType::Identifier);
+    //     expect(TokenType::Equal);
+    //     Token rhs = consume(TokenType::Identifier);  // or TokenType::Number
+    //     expect(TokenType::Semicolon);
+    //
+    //     moduleNode.assignments.push_back(ASTAssign(lhs.value, rhs.value));
+    // }
 
     return moduleNode;
 }

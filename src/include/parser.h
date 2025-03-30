@@ -8,7 +8,7 @@
 class Parser {
 public:
     explicit Parser(const std::vector<Token>& tokens);  // ✅ Ensure this matches parser.cpp
-    ASTNode parseModule();
+    ASTModule parseModule();
 
 private:
     std::vector<Token> tokens;

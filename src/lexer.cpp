@@ -5,15 +5,6 @@
 #include "include/token.h"
 #include "include/lexer.h"
 
-/*enum class TokenType {*/
-/*    Keyword, Identifier, Number, Operator, Punctuation, Unknown*/
-/*};*/
-/**/
-/*struct Token {*/
-/*    TokenType type;*/
-/*    std::string value;*/
-/*};*/
-
 std::vector<Token> lex(const std::string& code) {
     std::vector<Token> tokens;
     std::regex tokenRegex(R"(\b(module|endmodule|input|output|assign)\b|[a-zA-Z_][a-zA-Z0-9_]*|[=;+*/()-]|,)");
@@ -42,13 +33,3 @@ std::vector<Token> lex(const std::string& code) {
 
     return tokens;
 }
-
-/*int main() {*/
-/*    std::string verilog_code = "module adder(input logic [3:0] a, b, output logic [3:0] sum); assign sum = a + b; endmodule";*/
-/*    auto tokens = lex(verilog_code);*/
-/**/
-/*    for (const auto& token : tokens) {*/
-/*        std::cout << "Token: " << token.value << "\n";*/
-/*    }*/
-/*    return 0;*/
-/*}*/

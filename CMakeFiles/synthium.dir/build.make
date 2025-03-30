@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/sriramprasath/projects/synthium
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sriramprasath/projects/synthium
+CMAKE_BINARY_DIR = /Users/sriramprasath/projects/Synthium
 
 # Include any dependencies generated for this target.
 include CMakeFiles/synthium.dir/depend.make
@@ -75,7 +75,7 @@ CMakeFiles/synthium.dir/codegen:
 CMakeFiles/synthium.dir/src/lexer.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/lexer.cpp.o: src/lexer.cpp
 CMakeFiles/synthium.dir/src/lexer.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/synthium.dir/src/lexer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/synthium.dir/src/lexer.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/lexer.cpp.o -MF CMakeFiles/synthium.dir/src/lexer.cpp.o.d -o CMakeFiles/synthium.dir/src/lexer.cpp.o -c /Users/sriramprasath/projects/synthium/src/lexer.cpp
 
 CMakeFiles/synthium.dir/src/lexer.cpp.i: cmake_force
@@ -89,7 +89,7 @@ CMakeFiles/synthium.dir/src/lexer.cpp.s: cmake_force
 CMakeFiles/synthium.dir/src/parser.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/parser.cpp.o: src/parser.cpp
 CMakeFiles/synthium.dir/src/parser.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/synthium.dir/src/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/synthium.dir/src/parser.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/parser.cpp.o -MF CMakeFiles/synthium.dir/src/parser.cpp.o.d -o CMakeFiles/synthium.dir/src/parser.cpp.o -c /Users/sriramprasath/projects/synthium/src/parser.cpp
 
 CMakeFiles/synthium.dir/src/parser.cpp.i: cmake_force
@@ -103,7 +103,7 @@ CMakeFiles/synthium.dir/src/parser.cpp.s: cmake_force
 CMakeFiles/synthium.dir/src/ast.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/ast.cpp.o: src/ast.cpp
 CMakeFiles/synthium.dir/src/ast.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/synthium.dir/src/ast.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/synthium.dir/src/ast.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/ast.cpp.o -MF CMakeFiles/synthium.dir/src/ast.cpp.o.d -o CMakeFiles/synthium.dir/src/ast.cpp.o -c /Users/sriramprasath/projects/synthium/src/ast.cpp
 
 CMakeFiles/synthium.dir/src/ast.cpp.i: cmake_force
@@ -117,7 +117,7 @@ CMakeFiles/synthium.dir/src/ast.cpp.s: cmake_force
 CMakeFiles/synthium.dir/src/token.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/token.cpp.o: src/token.cpp
 CMakeFiles/synthium.dir/src/token.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/synthium.dir/src/token.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/synthium.dir/src/token.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/token.cpp.o -MF CMakeFiles/synthium.dir/src/token.cpp.o.d -o CMakeFiles/synthium.dir/src/token.cpp.o -c /Users/sriramprasath/projects/synthium/src/token.cpp
 
 CMakeFiles/synthium.dir/src/token.cpp.i: cmake_force
@@ -131,7 +131,7 @@ CMakeFiles/synthium.dir/src/token.cpp.s: cmake_force
 CMakeFiles/synthium.dir/src/simulator.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/simulator.cpp.o: src/simulator.cpp
 CMakeFiles/synthium.dir/src/simulator.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/synthium.dir/src/simulator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/synthium.dir/src/simulator.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/simulator.cpp.o -MF CMakeFiles/synthium.dir/src/simulator.cpp.o.d -o CMakeFiles/synthium.dir/src/simulator.cpp.o -c /Users/sriramprasath/projects/synthium/src/simulator.cpp
 
 CMakeFiles/synthium.dir/src/simulator.cpp.i: cmake_force
@@ -145,7 +145,7 @@ CMakeFiles/synthium.dir/src/simulator.cpp.s: cmake_force
 CMakeFiles/synthium.dir/src/main.cpp.o: CMakeFiles/synthium.dir/flags.make
 CMakeFiles/synthium.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/synthium.dir/src/main.cpp.o: CMakeFiles/synthium.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/synthium.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/synthium.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/synthium.dir/src/main.cpp.o -MF CMakeFiles/synthium.dir/src/main.cpp.o.d -o CMakeFiles/synthium.dir/src/main.cpp.o -c /Users/sriramprasath/projects/synthium/src/main.cpp
 
 CMakeFiles/synthium.dir/src/main.cpp.i: cmake_force
@@ -176,7 +176,7 @@ synthium: CMakeFiles/synthium.dir/src/simulator.cpp.o
 synthium: CMakeFiles/synthium.dir/src/main.cpp.o
 synthium: CMakeFiles/synthium.dir/build.make
 synthium: CMakeFiles/synthium.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sriramprasath/projects/synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable synthium"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/sriramprasath/projects/Synthium/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable synthium"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/synthium.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -188,6 +188,6 @@ CMakeFiles/synthium.dir/clean:
 .PHONY : CMakeFiles/synthium.dir/clean
 
 CMakeFiles/synthium.dir/depend:
-	cd /Users/sriramprasath/projects/synthium && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/synthium/CMakeFiles/synthium.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/sriramprasath/projects/Synthium && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/synthium /Users/sriramprasath/projects/Synthium /Users/sriramprasath/projects/Synthium /Users/sriramprasath/projects/Synthium/CMakeFiles/synthium.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/synthium.dir/depend
 
