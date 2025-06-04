@@ -19,6 +19,7 @@ private:
     void expect(TokenType expectedType);  // ✅ Ensure this is declared
     ASTNode parsePort();     // ✅ Declare parsePort()
     ASTNode parseAssign();   // ✅ Declare parseAssign()
+    ASTExpression parseExpression();
 };
 
 #endif // PARSER_H

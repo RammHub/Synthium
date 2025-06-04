@@ -99,7 +99,8 @@ int main() {
     }
 
     for (const auto& assign : module.assignments) {
-        std::cout << "Assignment: " << assign.lhs << " = " << assign.rhs << std::endl;
+        std::cout << "Assignment: " << assign.lhs << " = ";
+        assign.rhs.print();
     }
 
     return 0;
