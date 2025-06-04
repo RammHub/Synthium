@@ -34,15 +34,31 @@ struct ASTNode {
     }
 };
 
+class ASTExpression : public ASTNode {
+public:
+    std::vector<Token> tokens;
+
+    ASTExpression(std::vector<Token> tokens)
+        : ASTNode("Expression"), tokens(std::move(tokens)) {}
+
+    void print() const {
+        std::cout << "Expression: ";
+        for (const auto& token : tokens) {
+            std::cout << token.value << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
 class ASTAssign : public ASTNode {
 public:
     std::string lhs;
     ASTExpression rhs;
 
     ASTAssign(const std::string& lhs, const ASTExpression& rhs)
-        : ASTNode(ASTNodeType::Assignment), lhs(lhs), rhs(rhs) {}
+        : ASTNode("Assignment"), lhs(lhs), rhs(rhs) {}
 
-    void print() const override {
+    void print() const {
         std::cout << lhs << " = ";
         rhs.print();
     }
@@ -54,22 +70,6 @@ struct ASTModule : public ASTNode {
     std::vector<ASTAssign> assignments;  // Stores assignments
 
     ASTModule(std::string n) : ASTNode(), name(std::move(n)) {}
-};
-
-class ASTExpression : public ASTNode {
-public:
-    std::vector<Token> tokens;
-
-    ASTExpression(std::vector<Token> tokens)
-        : ASTNode(ASTNodeType::Expression), tokens(std::move(tokens)) {}
-
-    void print() const override {
-        std::cout << "Expression: ";
-        for (const auto& token : tokens) {
-            std::cout << token.value << " ";
-        }
-        std::cout << std::endl;
-    }
 };
 
 #endif // AST_H
