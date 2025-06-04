@@ -6,6 +6,9 @@
 enum class TokenType {
     Module, EndModule,
     Input, Output,
+    Wire, Reg,
+    Always, Begin, End,
+    If, Else,
     LParen, RParen,
     Assign, Equal,
     Plus, Minus,

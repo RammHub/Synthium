@@ -64,10 +64,45 @@ public:
     }
 };
 
+class ASTWire : public ASTNode {
+public:
+    explicit ASTWire(std::string n)
+        : ASTNode("Wire"), name(std::move(n)) {}
+    std::string name;
+};
+
+class ASTReg : public ASTNode {
+public:
+    explicit ASTReg(std::string n)
+        : ASTNode("Reg"), name(std::move(n)) {}
+    std::string name;
+};
+
+class ASTAlways : public ASTNode {
+public:
+    std::vector<std::string> sensitivityList;
+    std::vector<ASTNode> statements;
+
+    ASTAlways() : ASTNode("Always") {}
+};
+
+class ASTIf : public ASTNode {
+public:
+    ASTExpression condition;
+    std::vector<ASTNode> thenStmts;
+    std::vector<ASTNode> elseStmts;
+
+    explicit ASTIf(const ASTExpression& cond)
+        : ASTNode("If"), condition(cond) {}
+};
+
 struct ASTModule : public ASTNode {
     std::string name;
     std::vector<std::pair<TokenType, std::string>> ports;  // Stores (input/output, name)
     std::vector<ASTAssign> assignments;  // Stores assignments
+    std::vector<ASTWire> wires;
+    std::vector<ASTReg> regs;
+    std::vector<ASTAlways> alwaysBlocks;
 
     ASTModule(std::string n) : ASTNode(), name(std::move(n)) {}
 };
